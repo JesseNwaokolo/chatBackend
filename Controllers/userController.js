@@ -61,7 +61,7 @@ const findUser = async (req, res)=>{
 const getUsers = async (req, res)=>{
   try{
     const user = await userModel.find()
-    res.status(200).send("user1")
+    res.send("user1")
   } catch(err){
     console.log(err)
   }
