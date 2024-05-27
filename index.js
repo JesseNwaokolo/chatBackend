@@ -20,6 +20,10 @@ app.use("/user", userRoute)
 app.use("/chat", chatRoute)
 app.use("/message", messageRoute)
 
+app.get("/", (req,res)=>{
+  res.send("Welcome to jesseChat BackendServer")
+})
+
 app.listen(port, ()=>{
   console.log("Server started at port " + port)
 })
