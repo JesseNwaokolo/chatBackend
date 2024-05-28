@@ -9,7 +9,6 @@ const createToken = (_id) => {
 };
 
 const registerUser = async (req, res) => {
-  res.send("love")
   try {
     const { name, email, password } = req.body;
     let user = await userModel.findOne({ email });
@@ -60,8 +59,14 @@ const findUser = async (req, res)=>{
 }
 
 const getUsers = async (req, res)=>{
+  try{
     const user = await userModel.find()
     res.status(200).json(user)
+  } catch(err){
+    console.log(err)
+  }
+  
+
 }
 
 module.exports = { registerUser, loginUser, findUser, getUsers };
