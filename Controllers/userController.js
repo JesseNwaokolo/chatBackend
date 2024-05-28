@@ -9,6 +9,7 @@ const createToken = (_id) => {
 };
 
 const registerUser = async (req, res) => {
+  res.send("love")
   try {
     const { name, email, password } = req.body;
     let user = await userModel.findOne({ email });
